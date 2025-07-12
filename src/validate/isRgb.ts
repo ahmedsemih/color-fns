@@ -1,4 +1,4 @@
-import { isInRange, parseChannel } from '../helpers';
+import { isAlphaValid, isInRange, parseChannel } from '../helpers';
 
 /**
  * Checks if value is a valid RGB color, supporting both string and object formats.
@@ -54,18 +54,9 @@ const validateRgbString = (value: string): boolean => {
   const blue = parseChannel(b);
 
   const isValidRgb = isInRange(red, 0, 255) && isInRange(green, 0, 255) && isInRange(blue, 0, 255);
-
   if (!isValidRgb) return false;
 
-  if (a !== undefined) {
-    let alpha: number;
-    if (a.endsWith('%')) {
-      alpha = Number(a.slice(0, -1)) / 100;
-    } else {
-      alpha = Number(a);
-    }
-    return isInRange(alpha, 0, 1);
-  }
+  if (a !== undefined) return isAlphaValid(a);
 
   return true;
 };
