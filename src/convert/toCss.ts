@@ -23,7 +23,7 @@ export const toCss = (color: RgbColor | HslColor): string => {
   if ('red' in color && 'green' in color && 'blue' in color) {
     const { red, green, blue, alpha } = color;
 
-    if (alpha === undefined) {
+    if (alpha === undefined || alpha === 1) {
       return `rgb(${red}, ${green}, ${blue})`;
     }
     return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
@@ -32,7 +32,7 @@ export const toCss = (color: RgbColor | HslColor): string => {
   if ('hue' in color && 'saturation' in color && 'lightness' in color) {
     const { hue, saturation, lightness, alpha } = color;
 
-    if (alpha === undefined) {
+    if (alpha === undefined || alpha === 1) {
       return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
     }
     return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
