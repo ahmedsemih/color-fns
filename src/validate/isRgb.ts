@@ -1,4 +1,5 @@
-import { isAlphaValid, isInRange, parseChannel } from '../helpers';
+import { isAlphaValid, isInRange } from '../helpers';
+import { parseChannel } from '../parse';
 
 /**
  * Checks if value is a valid RGB color, supporting both string and object formats.

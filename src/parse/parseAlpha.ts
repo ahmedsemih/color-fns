@@ -6,6 +6,7 @@ import { isInRange } from '../helpers/isInRange';
  *
  * @param {string | number} alpha - The alpha value to parse.
  * @returns {number} The numeric alpha value between 0 and 1.
+ * @throws {Error} If the alpha value is invalid or out of range.
  */
 export const parseAlpha = (alpha: string | number): number => {
   if (typeof alpha === 'number') {

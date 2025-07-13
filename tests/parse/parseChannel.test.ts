@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseChannel } from '../../src/helpers';
+import { parseChannel } from '../../src';
 
 describe('parseChannel', () => {
   it('should parse percentage values correctly', () => {

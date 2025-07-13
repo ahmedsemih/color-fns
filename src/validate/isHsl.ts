@@ -1,4 +1,5 @@
-import { isInRange, parseHue, isAlphaValid } from '../helpers';
+import { isInRange, isAlphaValid } from '../helpers';
+import { parseHue } from '../parse';
 
 /**
  * Checks if a value is a valid HSL color, supporting both string and object formats.

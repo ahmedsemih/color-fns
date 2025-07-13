@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseHue } from '../../src/helpers';
+import { parseHue } from '../../src';
 
 describe('parseHue', () => {
   it('should parse positive, negative, and large degree values', () => {
