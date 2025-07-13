@@ -1,10 +1,13 @@
 /**
- * Parses a hue string with optional units and converts it to degrees.
+ * Parses a hue string with optional units and converts it to a normalized degree value [0, 360).
  * Supports deg, rad, grad, and turn units. Unitless values are assumed to be degrees.
- * The function correctly handles negative values and values outside the typical 0-360 range.
  *
  * @param {string} hueString - The hue value string to parse.
- * @returns {number} The hue value in degrees, or NaN if the format is invalid.
+ * @returns {number} The normalized hue value in degrees, or NaN if the format is invalid.
+ * @example
+ * parseHue('450deg');   // 90
+ * parseHue('-90deg');   // 270
+ * parseHue('1.5turn');  // 180
  */
 export const parseHue = (hueString: string): number => {
   const trimmed = hueString.trim().toLowerCase();
@@ -17,14 +20,22 @@ export const parseHue = (hueString: string): number => {
 
   if (isNaN(value)) return NaN;
 
+  let degrees: number;
+
   switch (unit) {
     case 'rad':
-      return (value * 180) / Math.PI;
+      degrees = (value * 180) / Math.PI;
+      break;
     case 'grad':
-      return (value / 400) * 360;
+      degrees = (value / 400) * 360;
+      break;
     case 'turn':
-      return value * 360;
+      degrees = value * 360;
+      break;
     default:
-      return value;
+      degrees = value;
+      break;
   }
+
+  return ((degrees % 360) + 360) % 360;
 };
