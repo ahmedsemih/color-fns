@@ -59,8 +59,8 @@
     "build": "npm run clean && npm run build:types && npm run build:js",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "lint": "eslint 'src/**/*.ts'",
-    "format": "prettier --write"
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write '**/*.{ts,js,md,yml}'"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
