@@ -9,3 +9,4 @@ export * from './toHsl';
 export * from './toHslString';
 export * from './rgbToHex';
 export * from './hslToHex';
+export * from './toHex';
