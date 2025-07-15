@@ -42,21 +42,25 @@ describe('rgbToHsl', () => {
       hue: 120,
       saturation: 100,
       lightness: 50,
+      alpha: 1,
     });
     expect(rgbToHsl('rgb(255, 0, 0)')).toEqual({
       hue: 0,
       saturation: 100,
       lightness: 50,
+      alpha: 1,
     });
     expect(rgbToHsl('rgb(0, 0, 255)')).toEqual({
       hue: 240,
       saturation: 100,
       lightness: 50,
+      alpha: 1,
     });
     expect(rgbToHsl('rgb(255, 255, 0)')).toEqual({
       hue: 60,
       saturation: 100,
       lightness: 50,
+      alpha: 1,
     });
     expect(rgbToHsl('rgb(255, 0, 0, 1)')).toEqual({
       hue: 0,
