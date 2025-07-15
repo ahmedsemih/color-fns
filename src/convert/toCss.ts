@@ -1,3 +1,5 @@
+import { HslColor, RgbColor } from "../types";
+
 /**
  * Converts an RgbColor or HslColor object into a CSS-compatible string.
  *

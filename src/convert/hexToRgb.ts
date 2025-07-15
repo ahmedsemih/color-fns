@@ -1,4 +1,5 @@
 import { parseHex } from '../parse';
+import { RgbColor } from '../types';
 
 /**
  * Converts a hexadecimal color string to its RGB equivalent.

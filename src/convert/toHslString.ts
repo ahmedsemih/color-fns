@@ -1,4 +1,5 @@
 import { toCss, toHsl } from '../convert';
+import { HslColor, RgbColor } from '../types';
 
 /**
  * Converts any supported color format into a CSS HSL/HSLA string.

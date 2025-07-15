@@ -1,4 +1,5 @@
 import { toCss, toRgb } from '../convert';
+import { HslColor, RgbColor } from '../types';
 
 /**
  * Converts any supported color format into a CSS RGB/RGBA string.

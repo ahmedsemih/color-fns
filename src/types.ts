@@ -1,11 +1,11 @@
-type RgbColor = {
+export type RgbColor = {
     red: number;
     green: number;
     blue: number;
     alpha?: number;
 }
 
-type HslColor = {
+export type HslColor = {
     hue: number;
     saturation: number;
     lightness: number;

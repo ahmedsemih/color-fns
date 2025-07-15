@@ -1,6 +1,7 @@
 import { parseRgb } from '../parse';
 import { isHsl, isRgb } from '../validate';
 import { hexToRgb, hslToRgb } from '../convert';
+import { HslColor, RgbColor } from '../types';
 
 /**
  * Converts any supported color format into an RgbColor object.

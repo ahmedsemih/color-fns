@@ -1,5 +1,6 @@
 import { isAlphaValid, isInRange } from '../helpers';
 import { parseChannel } from '../parse';
+import { RgbColor } from '../types';
 
 /**
  * Checks if value is a valid RGB color, supporting both string and object formats.

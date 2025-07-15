@@ -1,5 +1,6 @@
 import { parseHex } from '../parse';
 import { hslToHex, rgbToHex } from '../convert';
+import { HslColor, RgbColor } from '../types';
 
 /**
  * Converts any supported color format into a CSS hexadecimal string.
@@ -30,8 +31,8 @@ export const toHex = (color: string | RgbColor | HslColor): string => {
     const isRgb = 'red' in color && 'green' in color && 'blue' in color;
     const isHsl = 'hue' in color && 'saturation' in color && 'lightness' in color;
 
-    if (isRgb) return rgbToHex(color as RgbColor);
-    if (isHsl) return hslToHex(color as HslColor);
+    if (isRgb) return rgbToHex(color);
+    if (isHsl) return hslToHex(color);
   }
 
   if (typeof color === 'string') {

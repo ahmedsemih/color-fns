@@ -1,4 +1,5 @@
 import { parseRgb } from '../parse';
+import { HslColor, RgbColor } from '../types';
 import { isRgb } from '../validate';
 
 /**

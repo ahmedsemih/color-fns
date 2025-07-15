@@ -1,5 +1,6 @@
 import { isInRange } from '../helpers';
 import { parseAlpha, parseChannel } from '../parse';
+import { RgbColor } from '../types';
 
 /**
  * Parses an RGB color string into an RgbColor object.

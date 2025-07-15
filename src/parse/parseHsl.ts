@@ -1,5 +1,6 @@
 import { isInRange } from '../helpers';
 import { parseHue, parseAlpha } from '../parse';
+import { HslColor } from '../types';
 
 /**
  * Parses an HSL color string into an HslColor object.

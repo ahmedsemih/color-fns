@@ -1,3 +1,4 @@
+import { HslColor } from '../types';
 import { hslToRgb } from './hslToRgb';
 
 /**

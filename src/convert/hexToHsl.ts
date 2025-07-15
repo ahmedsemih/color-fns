@@ -1,5 +1,6 @@
 import { parseHex } from '../parse';
 import { rgbToHsl } from '../convert';
+import { HslColor } from '../types';
 
 /**
  * Converts a hexadecimal color string to its HSL equivalent.
