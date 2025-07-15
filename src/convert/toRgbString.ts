@@ -11,12 +11,12 @@ import { HslColor, RgbColor } from '../types';
  * @returns {string} A CSS color string in `rgb()` or `rgba()` format.
  * @throws {Error} If the input color format is not recognized or invalid.
  * @example
- * toRgbString('#ff0000'); 
+ * toRgbString('#ff0000');
  * // 'rgb(255, 0, 0)'
- * 
- * toRgbString('hsl(120, 100%, 50%)'); 
+ *
+ * toRgbString('hsl(120, 100%, 50%)');
  * // 'rgb(0, 255, 0)'
- * toRgbString({ red: 0, green: 0, blue: 255, alpha: 0.5 }); 
+ * toRgbString({ red: 0, green: 0, blue: 255, alpha: 0.5 });
  * // 'rgba(0, 0, 255, 0.5)'
  */
 export const toRgbString = (color: string | HslColor | RgbColor): string => {

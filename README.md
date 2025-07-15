@@ -15,13 +15,13 @@
 
 ## ⚡ Features
 
-- 🎨 **Convert** between HEX, RGB & HSL easily  
-- ✨ **Supports** modern CSS color formats & units (`deg`, `rad`, `turn`, `grad`)  
-- 🔒 **Type-safe** with full TypeScript support  
-- 🧩 **Zero dependencies**, tiny & fast  
-- 🌳 **Tree-shakable**, import only what you use  
-- ✅ **Validate** colors with simple checks  
-- 🎯 **Consistent API**, easy to learn & use  
+- 🎨 **Convert** between HEX, RGB & HSL easily
+- ✨ **Supports** modern CSS color formats & units (`deg`, `rad`, `turn`, `grad`)
+- 🔒 **Type-safe** with full TypeScript support
+- 🧩 **Zero dependencies**, tiny & fast
+- 🌳 **Tree-shakable**, import only what you use
+- ✅ **Validate** colors with simple checks
+- 🎯 **Consistent API**, easy to learn & use
 
 ## 🛠️ Installation
 
@@ -319,24 +319,24 @@ Checks if value is a valid RGB color.
 ```js
 import { isRgb } from 'color-kit';
 
-isRgb('rgb(255, 0, 0)'); 
+isRgb('rgb(255, 0, 0)');
 // true
-isRgb('rgba(0, 255, 0, 50%)'); 
+isRgb('rgba(0, 255, 0, 50%)');
 // true
-isRgb('rgb(30% 20% 50%)'); 
+isRgb('rgb(30% 20% 50%)');
 // true
-isRgb('rgb(255 122 127 / 80%)'); 
+isRgb('rgb(255 122 127 / 80%)');
 // true
-isRgb({ red: 0, green: 0, blue: 255 }); 
+isRgb({ red: 0, green: 0, blue: 255 });
 // true
-isRgb({ red: 255, green: 0, blue: 0, alpha: 0.5 }); 
+isRgb({ red: 255, green: 0, blue: 0, alpha: 0.5 });
 // true
 
-isRgb('rgb(300, 0, 0)'); 
+isRgb('rgb(300, 0, 0)');
 // false (invalid red value)
-isRgb({ red: 255, green: 0 }); 
+isRgb({ red: 255, green: 0 });
 // false (missing blue)
-isRgb('rgb(255, 0, 0, 1.5)'); 
+isRgb('rgb(255, 0, 0, 1.5)');
 // false (invalid alpha value)
 ```
 
@@ -347,24 +347,24 @@ Checks if value is a valid HSL color.
 ```js
 import { isHsl } from 'color-kit';
 
-isHsl('hsl(120, 100%, 50%)'); 
+isHsl('hsl(120, 100%, 50%)');
 // true
-isHsl('hsla(120, 100%, 50%, 0.5)'); 
+isHsl('hsla(120, 100%, 50%, 0.5)');
 // true
-isHsl('hsl(120deg 100% 50%)'); 
+isHsl('hsl(120deg 100% 50%)');
 // true
-isHsl('hsl(0.3turn 60% 45% / 0.7)'); 
+isHsl('hsl(0.3turn 60% 45% / 0.7)');
 // true
-isHsl({ hue: 120, saturation: 100, lightness: 50 }); 
+isHsl({ hue: 120, saturation: 100, lightness: 50 });
 // true
-isHsl({ hue: 120, saturation: 100, lightness: 50, alpha: 0.5 }); 
+isHsl({ hue: 120, saturation: 100, lightness: 50, alpha: 0.5 });
 // true
 
-isHsl('hsl(400, 100%, 50%)'); 
+isHsl('hsl(400, 100%, 50%)');
 // false (invalid hue value)
-isHsl({ hue: 120, saturation: 100 }); 
+isHsl({ hue: 120, saturation: 100 });
 // false (missing lightness)
-isHsl('hsl(120, 100%, 50%, 1.5)'); 
+isHsl('hsl(120, 100%, 50%, 1.5)');
 // false (invalid alpha value)
 ```
 
@@ -375,20 +375,20 @@ Checks if value is a valid HEX color.
 ```js
 import { isHex } from 'color-kit';
 
-isHex('#ff8000'); 
+isHex('#ff8000');
 // true
-isHex('#f80'); 
+isHex('#f80');
 // true (short hex)
-isHex('#f80c'); 
+isHex('#f80c');
 // true (short hex with alpha)
-isHex('#ff8000ff'); 
+isHex('#ff8000ff');
 // true (full hex with alpha)
 
-isHex('ff8000'); 
+isHex('ff8000');
 // false (missing #)
-isHex('#ff8000g'); 
+isHex('#ff8000g');
 // false (invalid character)
-isHex('rgb(255, 0, 0)'); 
+isHex('rgb(255, 0, 0)');
 // false (not a hex string)
 ```
 
@@ -399,24 +399,24 @@ Checks if value is a valid color in any supported format (RGB, HSL, HEX).
 ```js
 import { isValid } from 'color-kit';
 
-isValid('rgb(255, 0, 0)'); 
+isValid('rgb(255, 0, 0)');
 // true
-isValid('hsl(120, 100%, 50%)'); 
+isValid('hsl(120, 100%, 50%)');
 // true
-isValid('#ff8000'); 
+isValid('#ff8000');
 // true
-isValid({ red: 255, green: 0, blue: 0 }); 
+isValid({ red: 255, green: 0, blue: 0 });
 // true
-isValid({ hue: 120, saturation: 100, lightness: 50 }); 
+isValid({ hue: 120, saturation: 100, lightness: 50 });
 // true
 
-isValid('invalid color'); 
+isValid('invalid color');
 // false
-isValid('rgb(300, 0, 0)'); 
+isValid('rgb(300, 0, 0)');
 // false (invalid RGB)
-isValid('hsl(400, 100%, 50%)'); 
+isValid('hsl(400, 100%, 50%)');
 // false (invalid HSL)
-isValid('#ff8000g'); 
+isValid('#ff8000g');
 // false (invalid HEX)
 ```
 

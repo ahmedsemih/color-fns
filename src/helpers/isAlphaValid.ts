@@ -2,7 +2,7 @@ import { isInRange } from './isInRange';
 
 /**
  * Checks if the given alpha value is a valid number or percentage.
- * 
+ *
  * @param {number|string} alpha - The alpha value to validate.
  * @returns {boolean} Returns `true` if the alpha value is valid, otherwise `false`.
  * @example

@@ -15,11 +15,11 @@ import { RgbColor } from '../types';
  * @returns {RgbColor} An object with `red`, `green`, `blue`, and `alpha` properties.
  * @throws {Error} If the color string is not a valid RGB format or contains invalid values.
  * @example
- * parseRgb('rgb(255, 0, 0)');          
+ * parseRgb('rgb(255, 0, 0)');
  * // { red: 255, green: 0, blue: 0, alpha: 1 }
- * parseRgb('rgba(0, 100%, 0, 0.5)');    
+ * parseRgb('rgba(0, 100%, 0, 0.5)');
  * // { red: 0, green: 255, blue: 0, alpha: 0.5 }
- * parseRgb('rgb(0 128 255 / 50%)');     
+ * parseRgb('rgb(0 128 255 / 50%)');
  * // { red: 0, green: 128, blue: 255, alpha: 0.5 }
  */
 export const parseRgb = (color: string): RgbColor => {

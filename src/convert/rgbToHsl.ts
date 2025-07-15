@@ -35,7 +35,7 @@ export const rgbToHsl = (color: string | RgbColor): HslColor => {
 
   let hue = 0;
   let saturation = 0;
-  let lightness = (max + min) / 2;
+  const lightness = (max + min) / 2;
 
   if (delta !== 0) {
     saturation = lightness > 0.5 ? delta / (2 - max - min) : delta / (max + min);

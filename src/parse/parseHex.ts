@@ -1,4 +1,4 @@
-import { RgbColor } from "../types";
+import { RgbColor } from '../types';
 
 /**
  * Parses a hexadecimal color string into an RgbColor object.

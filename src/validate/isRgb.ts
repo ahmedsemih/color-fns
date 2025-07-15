@@ -22,8 +22,8 @@ import { RgbColor } from '../types';
 export const isRgb = (value: unknown): boolean => {
   if (typeof value === 'string') {
     return validateRgbString(value);
-  } 
-  
+  }
+
   if (typeof value === 'object' && value !== null) {
     return validateRgbObject(value as RgbColor);
   }

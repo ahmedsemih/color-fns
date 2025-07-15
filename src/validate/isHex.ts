@@ -1,6 +1,6 @@
 /**
  * Checks if value is a valid hexadecimal color code.
- * 
+ *
  * It validates 3, 4, 6, and 8-digit hex codes.
  * - 3 digits: #RGB
  * - 4 digits: #RGBA

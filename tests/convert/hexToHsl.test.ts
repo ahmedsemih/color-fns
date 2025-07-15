@@ -20,6 +20,8 @@ describe('hexToHsl', () => {
     expect(() => hexToHsl('#12321312312312')).toThrow('Invalid Hex color format.');
     expect(() => hexToHsl(null as any)).toThrow('Invalid Hex color format.');
     expect(() => hexToHsl({} as any)).toThrow('Invalid Hex color format.');
-    expect(() => hexToHsl({ red: 255, green: 0, blue: 0, alpha: 1 } as any)).toThrow('Invalid Hex color format.');
+    expect(() => hexToHsl({ red: 255, green: 0, blue: 0, alpha: 1 } as any)).toThrow(
+      'Invalid Hex color format.'
+    );
   });
 });
