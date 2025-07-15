@@ -44,7 +44,7 @@ export const parseRgb = (color: string): RgbColor => {
     throw new Error('RGB values must be between 0 and 255');
   }
 
-  const alpha = a !== undefined ? parseAlpha(a) : 1;
+  const alpha = a !== undefined ? parseAlpha(a) : undefined;
 
   return {
     red,

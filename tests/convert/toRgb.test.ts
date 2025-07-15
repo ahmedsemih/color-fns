@@ -9,8 +9,8 @@ describe('toRgb', () => {
     expect(toRgb('hsl(90deg, 100%, 50%)')).toEqual({ red: 128, green: 255, blue: 0, alpha: 1 });
   });
   it('should convert valid RGB strings to RGB', () => {
-    expect(toRgb('rgb(255, 0, 0)')).toEqual({ red: 255, green: 0, blue: 0, alpha: 1 });
-    expect(toRgb('rgb(255, 255, 0)')).toEqual({ red: 255, green: 255, blue: 0, alpha: 1 });
+    expect(toRgb('rgb(255, 0, 0)')).toEqual({ red: 255, green: 0, blue: 0 });
+    expect(toRgb('rgb(255, 255, 0)')).toEqual({ red: 255, green: 255, blue: 0 });
     expect(toRgb('rgba(255, 0, 255, 0.5)')).toEqual({ red: 255, green: 0, blue: 255, alpha: 0.5 });
     expect(toRgb('rgba(128, 128, 128, 0.5)')).toEqual({
       red: 128,
