@@ -13,5 +13,5 @@ import { isHex, isRgb, isHsl } from '../validate';
  * isValid('not a color'); // false
  */
 export const isValid = (value: unknown): boolean => {
-  return isHex(value as any) || isRgb(value as any) || isHsl(value as any);
+  return isHex(value) || isRgb(value) || isHsl(value);
 };

@@ -3,14 +3,14 @@ import { parseChannel } from '../parse';
 import { RgbColor } from '../types';
 
 /**
- * Checks if value is a valid RGB color, supporting both string and object formats.
+ * Checks if value is a valid RGB color.
  *
  * - For strings, it validates `rgb()` and `rgba()` formats, including values with
  *   or without percentages, and comma or space separators.
  * - For objects, it checks for `red`, `green`, and `blue` properties within the
  *   0-255 range, and an optional `alpha` property within the 0-1 range.
  *
- * @param {string | RgbColor} value - The string or object to validate.
+ * @param {unknown} value - The input to validate.
  * @returns {boolean} Returns `true` if the value is a valid RGB color, otherwise `false`.
  * @example
  * isRgb('rgb(255, 0, 0)');       // true
@@ -19,7 +19,7 @@ import { RgbColor } from '../types';
  * isRgb('rgb(300, 0, 0)');       // false
  * isRgb({ red: 255, green: 0 }); // false (missing blue)
  */
-export const isRgb = (value: string | RgbColor): boolean => {
+export const isRgb = (value: unknown): boolean => {
   if (typeof value === 'string') {
     return validateRgbString(value);
   } 

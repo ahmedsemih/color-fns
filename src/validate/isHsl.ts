@@ -3,7 +3,7 @@ import { parseHue } from '../parse';
 import { HslColor } from '../types';
 
 /**
- * Checks if a value is a valid HSL color, supporting both string and object formats.
+ * Checks if a value is a valid HSL color.
  *
  * - For strings, it validates `hsl()` and `hsla()` formats, including values with
  *   different hue units (`deg`, `rad`, `grad`, `turn`), comma or space separators,
@@ -11,7 +11,7 @@ import { HslColor } from '../types';
  * - For objects, it checks for `hue` (0-360), `saturation` (0-100), and `lightness` (0-100)
  *   properties, and an optional `alpha` property (0-1).
  *
- * @param {string | HslColor} value - The string or object to validate.
+ * @param {unknown} value - The input to validate.
  * @returns {boolean} Returns `true` if the value is a valid HSL color, otherwise `false`.
  * @example
  * isHsl('hsl(120, 100%, 50%)');       // true
@@ -20,7 +20,7 @@ import { HslColor } from '../types';
  * isHsl('hsl(400, 100%, 50%)');       // false (hue out of range)
  * isHsl({ hue: 120, saturation: 50 }); // false (missing lightness)
  */
-export const isHsl = (value: string | HslColor): boolean => {
+export const isHsl = (value: unknown): boolean => {
   if (typeof value === 'string') {
     return validateHslString(value);
   }
