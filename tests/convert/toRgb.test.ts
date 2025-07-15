@@ -55,7 +55,7 @@ describe('toRgb', () => {
     expect(() => toRgb(null as any)).toThrow(
       'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
     );
-    expect(() => toRgb({})).toThrow(
+    expect(() => toRgb({} as any)).toThrow(
       'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
     );
   });

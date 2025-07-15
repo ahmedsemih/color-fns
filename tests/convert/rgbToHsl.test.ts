@@ -80,8 +80,8 @@ describe('rgbToHsl', () => {
     expect(() => rgbToHsl('invalid')).toThrow('Invalid RGB color format');
     expect(() => rgbToHsl({ red: 256, green: 0, blue: 0 })).toThrow('Invalid RGB color format');
     expect(() => rgbToHsl({ red: 0, green: -1, blue: 0 })).toThrow('Invalid RGB color format');
-    expect(() => rgbToHsl({ red: 0, green: 0 })).toThrow('Invalid RGB color format');
-    expect(() => rgbToHsl({})).toThrow('Invalid RGB color format');
-    expect(() => rgbToHsl(null)).toThrow('Invalid RGB color format');
+    expect(() => rgbToHsl({ red: 0, green: 0 } as any)).toThrow('Invalid RGB color format');
+    expect(() => rgbToHsl({} as any)).toThrow('Invalid RGB color format');
+    expect(() => rgbToHsl(null as any)).toThrow('Invalid RGB color format');
   });
 });

@@ -32,7 +32,7 @@ describe('hslToHex', () => {
 
   it('should throw an error for invalid HSL format', () => {
     expect(() => hslToHex('invalid')).toThrow('Invalid HSL color format');
-    expect(() => hslToHex({})).toThrow('Invalid HSL color format');
+    expect(() => hslToHex({} as any)).toThrow('Invalid HSL color format');
     expect(() => hslToHex({ hue: 0, saturation: -1, lightness: 50 })).toThrow(
       'Invalid HSL color format'
     );
@@ -42,6 +42,6 @@ describe('hslToHex', () => {
     expect(() => hslToHex({ hue: 0, saturation: 100, lightness: 50, alpha: 1.5 })).toThrow(
       'Invalid HSL color format'
     );
-    expect(() => hslToHex(null)).toThrow('Invalid HSL color format');
+    expect(() => hslToHex(null as any)).toThrow('Invalid HSL color format');
   });
 });
