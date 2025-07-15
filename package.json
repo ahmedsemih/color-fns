@@ -59,7 +59,7 @@
     "build": "npm run clean && npm run build:types && npm run build:js",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint",
     "format": "prettier --write '**/*.{ts,js,md,yml}'"
   },
   "devDependencies": {

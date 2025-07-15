@@ -16,6 +16,6 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": false
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
