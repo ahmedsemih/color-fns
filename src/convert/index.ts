@@ -6,3 +6,4 @@ export * from './toRgbString';
 export * from './rgbToHsl';
 export * from './hexToHsl';
 export * from './toHsl';
+export * from './toHslString';
