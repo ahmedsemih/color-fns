@@ -1,11 +1,10 @@
 {
-  "name": "color-kit",
+  "name": "@ahmedsemih/color-fns",
   "version": "0.0.0",
   "description": "A modern, lightweight, and tree-shakable utility library for working with colors in JavaScript and TypeScript. Easily convert between color formats like RGB, HEX, and HSL, generate random colors, and manipulate colors.",
   "keywords": [
     "color",
     "colors",
-    "color-kit",
     "color-toolkit",
     "color-tools",
     "color-utils",
@@ -30,13 +29,13 @@
   ],
   "license": "MIT",
   "author": "Ahmed Semih Erkan (https://github.com/ahmedsemih)",
-  "homepage": "https://github.com/ahmedsemih/color-kit#readme",
+  "homepage": "https://github.com/ahmedsemih/color-fns#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmedsemih/color-kit.git"
+    "url": "git+https://github.com/ahmedsemih/color-fns.git"
   },
   "bugs": {
-    "url": "https://github.com/ahmedsemih/color-kit/issues"
+    "url": "https://github.com/ahmedsemih/color-fns/issues"
   },
   "type": "module",
   "main": "dist/cjs/index.cjs",

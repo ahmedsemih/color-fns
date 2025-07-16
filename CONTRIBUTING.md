@@ -1,6 +1,6 @@
-# Contributing to Color-kit
+# Contributing to Color-fns
 
-Thank you for your interest in contributing to **color-kit**! This document will help you get started with contributing and explains the guidelines we follow.
+Thank you for your interest in contributing to **color-fns**! This document will help you get started with contributing and explains the guidelines we follow.
 
 ## What We're Looking For
 
@@ -17,12 +17,12 @@ Thank you for your interest in contributing to **color-kit**! This document will
 2. Clone your fork (replace YOUR-USERNAME with your GitHub username):
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/color-kit.git
+   git clone https://github.com/YOUR-USERNAME/color-fns.git
    ```
 
 3. Navigate to the project directory:
    ```bash
-   cd color-kit
+   cd color-fns
    ```
 4. Install dependencies:
 

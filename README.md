@@ -1,10 +1,10 @@
 <div align="center">
 
-# color-kit
+# color-fns
 
-![Npm Version](https://img.shields.io/npm/v/color-kit.svg)
-![Bundle Size](https://img.shields.io/bundlephobia/min/color-kit)
-![Types Included](https://img.shields.io/npm/types/color-kit)
+![Npm Version](https://img.shields.io/npm/v/@ahmedsemih/color-fns.svg)
+![Bundle Size](https://img.shields.io/bundlephobia/min/@ahmedsemih/color-fns)
+![Types Included](https://img.shields.io/npm/types/@ahmedsemih/color-fns)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
@@ -27,23 +27,23 @@
 
 ```bash
 # Using npm
-npm install color-kit
+npm install @ahmedsemih/color-fns
 
 # Using yarn
-yarn add color-kit
+yarn add @ahmedsemih/color-fns
 
 # Using pnpm
-pnpm add color-kit
+pnpm add @ahmedsemih/color-fns
 ```
 
 ## 🚀 Usage
 
 ```js
 // ESM
-import { toRgb } from 'color-kit';
+import { toRgb } from '@ahmedsemih/color-fns';
 
 // CommonJS
-const { toRgb } = require('color-kit');
+const { toRgb } = require('@ahmedsemih/color-fns');
 
 const rgb = toRgb('#ff8000');
 ```
@@ -97,7 +97,7 @@ Converts colors between different formats (RGB, HSL, HEX).
 Converts a color to an RGB object.
 
 ```js
-import { toRgb } from 'color-kit';
+import { toRgb } from '@ahmedsemih/color-fns';
 
 toRgb('#ff8000');
 // { red: 255, green: 128, blue: 0 }
@@ -116,7 +116,7 @@ toRgb({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts a color to CSS-compatible RGB string.
 
 ```js
-import { toRgbString } from 'color-kit';
+import { toRgbString } from '@ahmedsemih/color-fns';
 
 toRgbString('#ff8000');
 // 'rgb(255, 128, 0)'
@@ -135,7 +135,7 @@ toRgbString({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts a color to an HSL object.
 
 ```js
-import { toHsl } from 'color-kit';
+import { toHsl } from '@ahmedsemih/color-fns';
 
 toHsl('#ff8000');
 // { hue: 30, saturation: 100, lightness: 50 }
@@ -154,7 +154,7 @@ toHsl({ red: 255, green: 128, blue: 0, alpha: 0.5 });
 Converts a color to CSS-compatible HSL string.
 
 ```js
-import { toHslString } from 'color-kit';
+import { toHslString } from '@ahmedsemih/color-fns';
 
 toHslString('#ff8000');
 // 'hsl(30, 100%, 50%)'
@@ -173,7 +173,7 @@ toHslString({ red: 255, green: 128, blue: 0, alpha: 0.5 });
 Converts a color to CSS-compatible HEX string.
 
 ```js
-import { toHex } from 'color-kit';
+import { toHex } from '@ahmedsemih/color-fns';
 
 toHex('rgb(255, 128, 0)');
 // '#ff8000'
@@ -194,7 +194,7 @@ toHex({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts a color to a CSS-compatible string (RGB, HSL, or HEX).
 
 ```js
-import { toCss } from 'color-kit';
+import { toCss } from '@ahmedsemih/color-fns';
 
 toCss({ red: 255, green: 128, blue: 0 });
 // 'rgb(255, 128, 0)'
@@ -211,7 +211,7 @@ toCss({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts an RGB object or string to an HSL object.
 
 ```js
-import { rgbToHsl } from 'color-kit';
+import { rgbToHsl } from '@ahmedsemih/color-fns';
 
 rgbToHsl('rgb(255, 128, 0)');
 // { hue: 30, saturation: 100, lightness: 50 }
@@ -228,7 +228,7 @@ rgbToHsl({ red: 255, green: 128, blue: 0, alpha: 0.5 });
 Converts an RGB object or string to a HEX string.
 
 ```js
-import { rgbToHex } from 'color-kit';
+import { rgbToHex } from '@ahmedsemih/color-fns';
 
 rgbToHex('rgb(255, 128, 0)');
 // '#ff8000'
@@ -245,7 +245,7 @@ rgbToHex({ red: 255, green: 128, blue: 0, alpha: 0.5 });
 Converts an HSL object or string to an RGB object.
 
 ```js
-import { hslToRgb } from 'color-kit';
+import { hslToRgb } from '@ahmedsemih/color-fns';
 
 hslToRgb('hsl(30, 100%, 50%)');
 // { red: 255, green: 128, blue: 0 }
@@ -262,7 +262,7 @@ hslToRgb({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts an HSL object or string to a HEX string.
 
 ```js
-import { hslToHex } from 'color-kit';
+import { hslToHex } from '@ahmedsemih/color-fns';
 
 hslToHex('hsl(30, 100%, 50%)');
 // '#ff8000'
@@ -279,7 +279,7 @@ hslToHex({ hue: 30, saturation: 100, lightness: 50, alpha: 0.5 });
 Converts a HEX string to an RGB object.
 
 ```js
-import { hexToRgb } from 'color-kit';
+import { hexToRgb } from '@ahmedsemih/color-fns';
 
 hexToRgb('#ff8000');
 // { red: 255, green: 128, blue: 0 }
@@ -296,7 +296,7 @@ hexToRgb('#f80c');
 Converts a HEX string to an HSL object.
 
 ```js
-import { hexToHsl } from 'color-kit';
+import { hexToHsl } from '@ahmedsemih/color-fns';
 
 hexToHsl('#ff8000');
 // { hue: 30, saturation: 100, lightness: 50 }
@@ -317,7 +317,7 @@ Validates color strings and objects to ensure they are valid RGB, HSL, or HEX co
 Checks if value is a valid RGB color.
 
 ```js
-import { isRgb } from 'color-kit';
+import { isRgb } from '@ahmedsemih/color-fns';
 
 isRgb('rgb(255, 0, 0)');
 // true
@@ -345,7 +345,7 @@ isRgb('rgb(255, 0, 0, 1.5)');
 Checks if value is a valid HSL color.
 
 ```js
-import { isHsl } from 'color-kit';
+import { isHsl } from '@ahmedsemih/color-fns';
 
 isHsl('hsl(120, 100%, 50%)');
 // true
@@ -373,7 +373,7 @@ isHsl('hsl(120, 100%, 50%, 1.5)');
 Checks if value is a valid HEX color.
 
 ```js
-import { isHex } from 'color-kit';
+import { isHex } from '@ahmedsemih/color-fns';
 
 isHex('#ff8000');
 // true
@@ -397,7 +397,7 @@ isHex('rgb(255, 0, 0)');
 Checks if value is a valid color in any supported format (RGB, HSL, HEX).
 
 ```js
-import { isValid } from 'color-kit';
+import { isValid } from '@ahmedsemih/color-fns';
 
 isValid('rgb(255, 0, 0)');
 // true
@@ -429,7 +429,7 @@ Parse functions convert color strings into structured, easy-to-use object repres
 Parses an RGB color string into an `RgbColor` object.
 
 ```js
-import { parseRgb } from 'color-kit';
+import { parseRgb } from '@ahmedsemih/color-fns';
 
 parseRgb('rgb(255, 128, 0)');
 // { red: 255, green: 128, blue: 0 }
@@ -442,7 +442,7 @@ parseRgb('rgba(255, 128, 0, 0.5)');
 Parses an HSL color string into an `HslColor` object.
 
 ```js
-import { parseHsl } from 'color-kit';
+import { parseHsl } from '@ahmedsemih/color-fns';
 
 parseHsl('hsl(30, 100%, 50%)');
 // { hue: 30, saturation: 100, lightness: 50 }
@@ -455,7 +455,7 @@ parseHsl('hsla(30, 100%, 50%, 0.5)');
 Parses a hexadecimal color string into an `RgbColor` object.
 
 ```js
-import { parseHex } from 'color-kit';
+import { parseHex } from '@ahmedsemih/color-fns';
 
 parseHex('#ff8000');
 // { red: 255, green: 128, blue: 0 }
@@ -468,7 +468,7 @@ parseHex('#ff8000cc');
 Parses an alpha value from a string or number into a normalized float between 0 and 1.
 
 ```js
-import { parseAlpha } from 'color-kit';
+import { parseAlpha } from '@ahmedsemih/color-fns';
 
 parseAlpha('0.5'); // 0.5
 parseAlpha('50%'); // 0.5
@@ -480,7 +480,7 @@ parseAlpha(0.75); // 0.75
 Parses a hue value from a string or number into a normalized float between 0 and 360.
 
 ```js
-import { parseHue } from 'color-kit';
+import { parseHue } from '@ahmedsemih/color-fns';
 
 parseHue('180deg'); // 180
 parseHue('3.14rad'); // 180
@@ -494,7 +494,7 @@ parseHue(180); // 180
 Parses a color channel value from a string or number into a normalized integer between 0 and 255.
 
 ```js
-import { parseChannel } from 'color-kit';
+import { parseChannel } from '@ahmedsemih/color-fns';
 
 parseChannel('128'); // 128
 parseChannel('50%'); // 128
