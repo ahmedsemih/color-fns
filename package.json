@@ -1,7 +1,7 @@
 {
   "name": "color-kit",
   "version": "0.0.0",
-  "description": "A modern, lightweight, and tree-shakable utility library for working with colors in JavaScript and TypeScript. Easily convert between color formats like RGB, HEX, and HSL, generate random colors, and manipulate colors. Built for modern bundlers with zero dependencies.",
+  "description": "A modern, lightweight, and tree-shakable utility library for working with colors in JavaScript and TypeScript. Easily convert between color formats like RGB, HEX, and HSL, generate random colors, and manipulate colors.",
   "keywords": [
     "color",
     "colors",
@@ -30,6 +30,14 @@
   ],
   "license": "MIT",
   "author": "Ahmed Semih Erkan (https://github.com/ahmedsemih)",
+  "homepage": "https://github.com/ahmedsemih/color-kit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedsemih/color-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedsemih/color-kit/issues"
+  },
   "type": "module",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
@@ -60,7 +68,8 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "lint": "eslint",
-    "format": "prettier --write '**/*.{ts,js,md,yml}'"
+    "format": "prettier --write '**/*.{ts,js,md,yml}'",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
