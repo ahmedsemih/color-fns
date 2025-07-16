@@ -1,6 +1,6 @@
 {
   "name": "@ahmedsemih/color-fns",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A modern, lightweight, and tree-shakable utility library for working with colors in JavaScript and TypeScript. Easily convert between color formats like RGB, HEX, and HSL, generate random colors, and manipulate colors.",
   "keywords": [
     "color",
