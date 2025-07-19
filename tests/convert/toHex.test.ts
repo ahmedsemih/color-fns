@@ -38,25 +38,13 @@ describe('toHex', () => {
   });
 
   it('should throw an error for invalid inputs', () => {
-    expect(() => toHex('invalid-color')).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
+    expect(() => toHex('invalid-color')).toThrow('Invalid color format');
     expect(() => toHex('rgb(255, 0)')).toThrow('Invalid RGB color format');
     expect(() => toHex('#12345')).toThrow('Invalid Hex color format');
-    expect(() => toHex({ r: 255, g: 0, b: 0 } as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHex({} as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHex(null as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHex(12345 as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHex(undefined as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
+    expect(() => toHex({ r: 255, g: 0, b: 0 } as any)).toThrow('Invalid color format');
+    expect(() => toHex({} as any)).toThrow('Invalid color format');
+    expect(() => toHex(null as any)).toThrow('Invalid color format');
+    expect(() => toHex(12345 as any)).toThrow('Invalid color format');
+    expect(() => toHex(undefined as any)).toThrow('Invalid color format');
   });
 });

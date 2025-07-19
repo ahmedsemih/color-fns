@@ -1,6 +1,7 @@
 import { parseHex } from '../parse';
 import { hslToHex, rgbToHex } from '../convert';
 import { HslColor, RgbColor } from '../types';
+import { getFormat } from '../helpers';
 
 /**
  * Converts any supported color format into a CSS hexadecimal string.
@@ -27,26 +28,16 @@ import { HslColor, RgbColor } from '../types';
  * // returns '#FF00CC'
  */
 export const toHex = (color: string | RgbColor | HslColor): string => {
-  if (typeof color === 'object' && color !== null) {
-    const isRgb = 'red' in color && 'green' in color && 'blue' in color;
-    const isHsl = 'hue' in color && 'saturation' in color && 'lightness' in color;
+  const format = getFormat(color);
 
-    if (isRgb) return rgbToHex(color);
-    if (isHsl) return hslToHex(color);
+  if (format === 'rgb') return rgbToHex(color as RgbColor);
+  if (format === 'hsl') return hslToHex(color as HslColor);
+  if (format === 'rgbString') return rgbToHex(color as string);
+  if (format === 'hslString') return hslToHex(color as string);
+  if (format === 'hex') {
+    const rgb = parseHex(color as string);
+    return rgbToHex(rgb);
   }
 
-  if (typeof color === 'string') {
-    const trimmed = color.trim();
-
-    if (trimmed.startsWith('hsl')) return hslToHex(trimmed);
-    if (trimmed.startsWith('rgb')) return rgbToHex(trimmed);
-    if (trimmed.startsWith('#')) {
-      const rgb = parseHex(trimmed);
-      return rgbToHex(rgb);
-    }
-  }
-
-  throw new Error(
-    'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-  );
+  throw new Error('Invalid color format');
 };

@@ -46,17 +46,9 @@ describe('toRgb', () => {
     });
   });
   it('should throw an error for invalid color formats', () => {
-    expect(() => toRgb('invalid')).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toRgb(123 as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toRgb(null as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toRgb({} as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
+    expect(() => toRgb('invalid')).toThrow('Invalid color format');
+    expect(() => toRgb(123 as any)).toThrow('Invalid color format');
+    expect(() => toRgb(null as any)).toThrow('Invalid color format');
+    expect(() => toRgb({} as any)).toThrow('Invalid color format');
   });
 });

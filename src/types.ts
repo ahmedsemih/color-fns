@@ -11,3 +11,7 @@ export type HslColor = {
   lightness: number;
   alpha?: number;
 };
+
+export type Color = string | RgbColor | HslColor;
+
+export type SupportedFormats = 'hex' | 'rgbString' | 'hslString' | 'rgb' | 'hsl';

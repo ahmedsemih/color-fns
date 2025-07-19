@@ -38,20 +38,10 @@ describe('toHslString', () => {
   });
 
   it('should throw an error for invalid input', () => {
-    expect(() => toHslString('invalid')).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHslString(123 as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHslString({ red: 255, green: 255 } as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHslString({} as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
-    expect(() => toHslString(null as any)).toThrow(
-      'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-    );
+    expect(() => toHslString('invalid')).toThrow('Invalid color format');
+    expect(() => toHslString(123 as any)).toThrow('Invalid color format');
+    expect(() => toHslString({ red: 255, green: 255 } as any)).toThrow('Invalid color format');
+    expect(() => toHslString({} as any)).toThrow('Invalid color format');
+    expect(() => toHslString(null as any)).toThrow('Invalid color format');
   });
 });

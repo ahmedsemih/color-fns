@@ -1,7 +1,7 @@
 import { parseRgb } from '../parse';
-import { isHsl, isRgb } from '../validate';
 import { hexToRgb, hslToRgb } from '../convert';
 import { HslColor, RgbColor } from '../types';
+import { getFormat } from '../helpers';
 
 /**
  * Converts any supported color format into an RgbColor object.
@@ -27,20 +27,13 @@ import { HslColor, RgbColor } from '../types';
  * // returns { red: 255, green: 0, blue: 0, alpha: 1 }
  */
 export const toRgb = (color: string | RgbColor | HslColor): RgbColor => {
-  if (typeof color === 'object' && color !== null) {
-    if (isRgb(color as RgbColor)) return color as RgbColor;
-    if (isHsl(color as HslColor)) return hslToRgb(color as HslColor);
-  }
+  const format = getFormat(color);
 
-  if (typeof color === 'string') {
-    const trimmed = color.trim().toLowerCase();
+  if (format === 'rgb') return color as RgbColor;
+  if (format === 'hsl') return hslToRgb(color as HslColor);
+  if (format === 'hex') return hexToRgb(color as string);
+  if (format === 'hslString') return hslToRgb(color as string);
+  if (format === 'rgbString') return parseRgb(color as string);
 
-    if (trimmed.startsWith('#')) return hexToRgb(trimmed);
-    if (trimmed.startsWith('hsl')) return hslToRgb(trimmed);
-    if (trimmed.startsWith('rgb')) return parseRgb(trimmed);
-  }
-
-  throw new Error(
-    'Invalid color format. Expected a hex, RGB, or HSL string, or an RGB/HSL object.'
-  );
+  throw new Error('Invalid color format');
 };
