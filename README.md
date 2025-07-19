@@ -21,6 +21,7 @@
 - 🧩 **Zero dependencies**, tiny & fast
 - 🌳 **Tree-shakable**, import only what you use
 - ✅ **Validate** colors with simple checks
+- 🎲 **Generate** random colors in RGB, HSL, or HEX
 - 🎯 **Consistent API**, easy to learn & use
 
 ## 🛠️ Installation
