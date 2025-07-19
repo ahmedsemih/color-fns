@@ -22,6 +22,7 @@
 - 🌳 **Tree-shakable**, import only what you use
 - ✅ **Validate** colors with simple checks
 - 🎲 **Generate** random colors in RGB, HSL, or HEX
+- 🛠️ **Manipulate** colors effortlessly
 - 🎯 **Consistent API**, easy to learn & use
 
 ## 🛠️ Installation
@@ -78,6 +79,10 @@ const rgb = toRgb('#ff8000');
 - [randomRgb](#randomRgb)
 - [randomHsl](#randomHsl)
 - [randomHex](#randomHex)
+
+### Manipulate
+
+- [mix](#mix)
 
 #### Parse
 
@@ -462,6 +467,27 @@ import { randomHex } from '@ahmedsemih/color-fns';
 
 randomHex();
 // '#ff8000'
+```
+
+### 🛠️ Manipulate
+
+#### <a id="mix"></a>`mix(color1: string | RgbColor | HslColor, color2: string | RgbColor | HslColor, weight?: number): RgbColor`
+
+Mixes two colors together based on a specified weight. Default weight is 0.5 (equal mix).
+
+```js
+import { mix } from '@ahmedsemih/color-fns';
+
+mix('rgb(255, 0, 0)', 'rgb(0, 0, 255)');
+// 'rgb(128, 0, 128)'
+mix('hsl(120, 100%, 50%)', 'hsl(240, 100%, 50%)');
+// 'hsl(180, 100%, 25%)'
+mix('#ff8000', '#0080ff', 0.25);
+// '#4080BF'
+mix({ red: 255, green: 0, blue: 0 }, { hue: 240, saturation: 100, lightness: 50 });
+// { red: 128, green: 0, blue: 128, alpha: 1 }
+mix({ hue: 120, saturation: 100, lightness: 50 }, { red: 0, green: 0, blue: 255 }, 0.75);
+// { hue: 140, saturation: 100, lightness: 37, alpha: 1 }
 ```
 
 ### 🔍 Parse
