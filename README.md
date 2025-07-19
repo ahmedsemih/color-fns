@@ -9,7 +9,7 @@
 ![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
-**Modern, lightweight, and zero-dependency JavaScript & TypeScript color utility library. Effortlessly convert, validate, and parse colors in popular formats like RGB, HEX, and HSL. Tree-shakable and optimized for minimal bundle size perfect for web and Node.js projects.**
+**Modern, lightweight, and zero-dependency JavaScript & TypeScript color utility library. Effortlessly convert, validate, parse and generate colors in popular formats like RGB, HEX, and HSL. Tree-shakable and optimized for minimal bundle size perfect for web and Node.js projects.**
 
 </div>
 
@@ -71,6 +71,12 @@ const rgb = toRgb('#ff8000');
 - [isHsl](#isHsl)
 - [isHex](#isHex)
 - [isValid](#isValid)
+
+#### Generate
+
+- [randomRgb](#randomRgb)
+- [randomHsl](#randomHsl)
+- [randomHex](#randomHex)
 
 #### Parse
 
@@ -418,6 +424,43 @@ isValid('hsl(400, 100%, 50%)');
 // false (invalid HSL)
 isValid('#ff8000g');
 // false (invalid HEX)
+```
+
+### 🎲 Generate
+
+Generates random colors in RGB, HSL, or HEX formats.
+
+#### <a id="randomRgb"></a>`randomRgb(): RgbColor`
+
+Generates a random RGB color object.
+
+```js
+import { randomRgb } from '@ahmedsemih/color-fns';
+
+randomRgb();
+// { red: 34, green: 67, blue: 89 }
+```
+
+#### <a id="randomHsl"></a>`randomHsl(): HslColor`
+
+Generates a random HSL color object.
+
+```js
+import { randomHsl } from '@ahmedsemih/color-fns';
+
+randomHsl();
+// { hue: 240, saturation: 67, lightness: 89 }
+```
+
+#### <a id="randomHex"></a>`randomHex(): string`
+
+Generates a random HEX color string.
+
+```js
+import { randomHex } from '@ahmedsemih/color-fns';
+
+randomHex();
+// '#ff8000'
 ```
 
 ### 🔍 Parse
