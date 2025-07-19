@@ -38,9 +38,12 @@ export default [
       prettier,
     },
     rules: {
-      'prettier/prettier': ['error', {
-        "endOfLine": "auto",
-      }],
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
