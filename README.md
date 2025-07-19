@@ -97,6 +97,7 @@ const rgb = toRgb('#ff8000');
 
 - [RgbColor](#RgbColor)
 - [HslColor](#HslColor)
+- [Color](#Color)
 
 ## 📚 API Reference
 
@@ -471,9 +472,10 @@ randomHex();
 
 ### 🛠️ Manipulate
 
-#### <a id="mix"></a>`mix(color1: string | RgbColor | HslColor, color2: string | RgbColor | HslColor, weight?: number): RgbColor`
+#### <a id="mix"></a>`mix(color1: Color, color2: Color, weight?: number): Color`
 
 Mixes two colors together based on a specified weight. Default weight is 0.5 (equal mix).
+Returns a new color in the same format as the first color.
 
 ```js
 import { mix } from '@ahmedsemih/color-fns';
@@ -597,6 +599,14 @@ type HslColor = {
   lightness: number;
   alpha?: number;
 };
+```
+
+#### <a id="Color"></a>`Color`
+
+A union type representing any color format (RGB, HSL, HEX).
+
+```ts
+type Color = RgbColor | HslColor | string; // string for HEX or CSS
 ```
 
 ## 🤝 Contributing
