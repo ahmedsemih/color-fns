@@ -5,8 +5,8 @@
 ![Npm Version](https://img.shields.io/npm/v/@ahmedsemih/color-fns.svg)
 ![Bundle Size](https://img.shields.io/bundlephobia/min/@ahmedsemih/color-fns)
 ![Types Included](https://img.shields.io/npm/types/@ahmedsemih/color-fns)
+![Downloads](https://img.shields.io/npm/dt/@ahmedsemih/color-fns)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
 **Modern, lightweight, and zero-dependency JavaScript & TypeScript color utility library. Effortlessly convert, validate, parse and generate colors in popular formats like RGB, HEX, and HSL. Tree-shakable and optimized for minimal bundle size perfect for web and Node.js projects.**
@@ -79,6 +79,9 @@ const rgb = toRgb('#ff8000');
 - [randomRgb](#randomRgb)
 - [randomHsl](#randomHsl)
 - [randomHex](#randomHex)
+- [generateShades](#generateShades)
+- [generateTints](#generateTints)
+- [generateTones](#generateTones)
 
 ### Manipulate
 
@@ -468,6 +471,63 @@ import { randomHex } from '@ahmedsemih/color-fns';
 
 randomHex();
 // '#ff8000'
+```
+
+#### <a id="generateShades"></a>`generateShades(color: Color, count?: number): Color[]`
+
+Generates an array of shades for a given color. Shades are darker variations of the base color.
+
+```js
+import { generateShades } from '@ahmedsemih/color-fns';
+
+generateShades('#FF8000', 3);
+// ['#FF8000', '#AA5500', '#552A00']
+generateShades('rgb(255, 128, 0)', 3);
+// ['rgb(255, 128, 0)', 'rgb(170, 85, 0)', 'rgb(85, 42, 0)']
+generateShades('hsl(30, 100%, 50%)', 5);
+// ['hsl(30, 100%, 50%)', 'hsl(30, 100%, 40%)', 'hsl(30, 100%, 30%)', 'hsl(30, 100%, 20%)', 'hsl(30, 100%, 10%)']
+generateShades({ red: 255, green: 128, blue: 0 }, 2);
+// [{ red: 255, green: 128, blue: 0 }, { red: 128, green: 64, blue: 0 }]
+generateShades({ hue: 30, saturation: 100, lightness: 60 }, 3);
+// [{ hue: 30, saturation: 100, lightness: 60 }, { hue: 30, saturation: 100, lightness: 40 }, { hue: 30, saturation: 100, lightness: 20 }]
+```
+
+#### <a id="generateTints"></a>`generateTints(color: Color, count?: number): Color[]`
+
+Generates an array of tints for a given color. Tints are lighter variations of the base color.
+
+```js
+import { generateTints } from '@ahmedsemih/color-fns';
+
+generateTints('#ff8000', 3);
+// ['#FF8000', '#FFAA55', '#FFD5AA']
+generateTints('rgb(255, 128, 0)', 2);
+// ['rgb(255, 128, 0)', 'rgb(255, 191, 128)']
+generateTints('hsl(30, 100%, 50%)', 4);
+// ['hsl(30, 100%, 50%)', 'hsl(30, 100%, 62.5%)', 'hsl(30, 100%, 75%)', 'hsl(30, 100%, 87.5%)']
+generateTints({ red: 255, green: 128, blue: 0 }, 2);
+// [{ red: 255, green: 128, blue: 0 }, { red: 255, green: 191, blue: 128 }]
+generateTints({ hue: 30, saturation: 100, lightness: 60 }, 3);
+// [{ hue: 30, saturation: 100, lightness: 60 }, { hue: 30, saturation: 100, lightness: 80 }, { hue: 30, saturation: 100, lightness: 100 }]
+```
+
+#### <a id="generateTones"></a>`generateTones(color: Color, count?: number): Color[]`
+
+Generates an array of tones for a given color. Tones are variations of the base color with added gray.
+
+```js
+import { generateTones } from '@ahmedsemih/color-fns';
+
+generateTones('#FF8000', 3);
+// ['#FF8000', '#D4802B', '#AA8055']
+generateTones('rgb(255, 128, 0)', 2);
+// ['rgb(255, 128, 0)', 'rgb(191, 128, 64)']
+generateTones('hsl(30, 100%, 50%)', 4);
+// ['hsl(30, 100%, 50%)', 'hsl(30, 75%, 50%)', 'hsl(30, 50%, 50%)', 'hsl(30, 25%, 50%)']
+generateTones({ red: 255, green: 128, blue: 0 }, 2);
+// [{ red: 255, green: 128, blue: 0 }, { red: 191, green: 128, blue: 64 }]
+generateTones({ hue: 30, saturation: 90, lightness: 50 }, 3);
+// [{ hue: 30, saturation: 90, lightness: 50 }, { hue: 30, saturation: 60, lightness: 50 }, { hue: 30, saturation: 30, lightness: 50 }]
 ```
 
 ### 🛠️ Manipulate
