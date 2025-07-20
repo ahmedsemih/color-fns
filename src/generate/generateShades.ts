@@ -8,7 +8,7 @@ import { Color, HslColor } from '../types';
  *
  * @param {Color} color - The base color to generate shades from.
  * @param {number} [count=10] - The number of shades to generate. Default is 10.
- * @returns {Color[]} An array of colors representing the generated shades.
+ * @returns {Color[]} An array of colors representing the generated shades. Returns colors in the same format as the input color.
  * @throws {Error} If the provided color format is invalid.
  */
 export const generateShades = (color: Color, count = 10): Color[] => {
