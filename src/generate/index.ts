@@ -3,3 +3,4 @@ export * from './randomHsl';
 export * from './randomHex';
 export * from './generateShades';
 export * from './generateTints';
+export * from './generateTones';
