@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-07-21
+
+### Added
+
+- `generateTints(color, count)`: Generates a specified number of tints for a given color.
+- `generateShades(color, count)`: Generates a specified number of shades for a given color.
+- `generateTones(color, count)`: Generates a specified number of tones for a given color.
+
 ## [1.1.0] - 2025-07-19
 
 ### Added
