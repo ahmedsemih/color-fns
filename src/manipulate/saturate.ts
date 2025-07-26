@@ -6,7 +6,7 @@ import { Color } from '../types';
  * Adjusts the saturation of a color.
  *
  * @param {Color} color - The color to adjust.
- * @param {number} amount - The amount to adjust the saturation by. Can be a percentage (0 to 1) or an absolute value.
+ * @param {number} amount - The amount to adjust the saturation by.
  * @returns {Color} The color with adjusted saturation.
  */
 export const saturate = (color: Color, amount: number): Color => {
