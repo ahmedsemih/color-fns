@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-07-26
+
+### Added
+
+- `lighten(color, amount)`: Lightens a color by a specified amount.
+- `darken(color, amount)`: Darkens a color by a specified amount.
+- `saturate(color, amount)`: Increases the saturation of a color by a specified amount.
+- `desaturate(color, amount)`: Decreases the saturation of a color by a specified amount.
+- `grayscale(color)`: Converts a color to grayscale.
+- `invert(color)`: Inverts a color to its complementary color.
+- `setAlpha(color, alpha)`: Sets the alpha (opacity) of a color.
+
 ## [1.2.0] - 2025-07-21
 
 ### Added
