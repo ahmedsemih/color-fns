@@ -9,7 +9,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
-**Modern, lightweight, and zero-dependency JavaScript & TypeScript color utility library. Effortlessly convert, validate, parse and generate colors in popular formats like RGB, HEX, and HSL. Tree-shakable and optimized for minimal bundle size perfect for web and Node.js projects.**
+**Modern, lightweight, and zero-dependency JavaScript & TypeScript color utility library. Effortlessly convert, validate, manipulate, parse and generate colors in popular formats like RGB, HEX, and HSL. Tree-shakable and optimized for minimal bundle size perfect for web and Node.js projects.**
 
 </div>
 
@@ -86,6 +86,13 @@ const rgb = toRgb('#ff8000');
 ### Manipulate
 
 - [mix](#mix)
+- [lighten](#lighten)
+- [darken](#darken)
+- [saturate](#saturate)
+- [desaturate](#desaturate)
+- [grayscale](#grayscale)
+- [invert](#invert)
+- [setAlpha](#setAlpha)
 
 #### Parse
 
@@ -532,6 +539,8 @@ generateTones({ hue: 30, saturation: 90, lightness: 50 }, 3);
 
 ### 🛠️ Manipulate
 
+Manipulates colors by mixing, lightening, darkening, saturating, desaturating, converting to grayscale, inverting, and setting alpha values.
+
 #### <a id="mix"></a>`mix(color1: Color, color2: Color, weight?: number): Color`
 
 Mixes two colors together based on a specified weight. Default weight is 0.5 (equal mix).
@@ -550,6 +559,139 @@ mix({ red: 255, green: 0, blue: 0 }, { hue: 240, saturation: 100, lightness: 50 
 // { red: 128, green: 0, blue: 128, alpha: 1 }
 mix({ hue: 120, saturation: 100, lightness: 50 }, { red: 0, green: 0, blue: 255 }, 0.75);
 // { hue: 140, saturation: 100, lightness: 37, alpha: 1 }
+```
+
+#### <a id="lighten"></a>`lighten(color: Color, amount: number): Color`
+
+Lightens a color by a specified amount (0-100). Returns a new color in the same format as the input.
+
+```js
+import { lighten } from '@ahmedsemih/color-fns';
+
+lighten('rgb(100, 150, 200)', 0.2);
+// 'rgb(176, 201, 227)'
+lighten('hsl(200, 50%, 50%)', 0.2);
+// 'hsl(200, 50%, 70%)'
+lighten('#6496c8', 20);
+// '#B0C9E3'
+lighten({ red: 100, green: 150, blue: 200 }, 20);
+// { red: 176, green: 201, blue: 227 }
+lighten({ hue: 200, saturation: 50, lightness: 50 }, 20);
+// { hue: 200, saturation: 50, lightness: 70 }
+```
+
+#### <a id="darken"></a>`darken(color: Color, amount: number): Color`
+
+Darkens a color by a specified amount (0-100). Returns a new color in the same format as the input.
+
+```js
+import { darken } from '@ahmedsemih/color-fns';
+
+darken('rgb(100, 150, 200)', 0.2);
+// 'rgb(52, 99, 147)'
+darken('hsl(200, 50%, 50%)', 20);
+// 'hsl(200, 50%, 30%)'
+darken('#6496c8', 20);
+// '#346393'
+darken({ red: 100, green: 150, blue: 200 }, 0.2);
+// { red: 52, green: 99, blue: 147 }
+darken({ hue: 200, saturation: 50, lightness: 50 }, 0.2);
+// { hue: 200, saturation: 50, lightness: 30 }
+```
+
+#### <a id="saturate"></a>`saturate(color: Color, amount: number): Color`
+
+Increases the saturation of a color by a specified amount (0-100). Returns a new color in the same format as the input.
+
+```js
+import { saturate } from '@ahmedsemih/color-fns';
+
+saturate('rgb(100, 150, 200)', 0.2);
+// 'rgb(79, 150, 222)'
+saturate('hsl(200, 50%, 50%)', 20);
+// 'hsl(200, 70%, 50%)'
+saturate('#6496c8', 20);
+// '#4F96DE'
+saturate({ red: 100, green: 150, blue: 200 }, 20);
+// { red: 79, green: 150, blue: 222 }
+saturate({ hue: 200, saturation: 50, lightness: 50 }, 20);
+// { hue: 200, saturation: 70, lightness: 50 }
+```
+
+#### <a id="desaturate"></a>`desaturate(color: Color, amount: number): Color`
+
+Decreases the saturation of a color by a specified amount (0-100). Returns a new color in the same format as the input.
+
+```js
+import { desaturate } from '@ahmedsemih/color-fns';
+
+desaturate('rgb(100, 150, 200)', 20);
+// 'rgb(121, 150, 180)'
+desaturate('hsl(200, 50%, 50%)', 20);
+// 'hsl(200, 30%, 50%)'
+desaturate('#6496c8', 0.2);
+// '#7996B4'
+desaturate({ red: 100, green: 150, blue: 200 }, 0.2);
+// { red: 121, green: 150, blue: 180 }
+desaturate({ hue: 200, saturation: 50, lightness: 50 }, 20);
+// { hue: 200, saturation: 30, lightness: 50 }
+```
+
+#### <a id="grayscale"></a>`grayscale(color: Color): Color`
+
+Converts a color to grayscale. Returns a new color in the same format as the input.
+
+```js
+import { grayscale } from '@ahmedsemih/color-fns';
+
+grayscale('rgb(100, 150, 200)');
+// 'rgb(150, 150, 150)'
+grayscale('hsl(210, 50%, 50%)');
+// 'hsl(210, 0%, 50%)'
+grayscale('#6496c8');
+// '#969696'
+grayscale({ red: 100, green: 150, blue: 200 });
+// { red: 150, green: 150, blue: 150 }
+grayscale({ hue: 210, saturation: 50, lightness: 50 });
+// { hue: 210, saturation: 0, lightness: 50 }
+```
+
+#### <a id="invert"></a>`invert(color: Color): Color`
+
+Inverts a color to its complementary color. Returns a new color in the same format as the input.
+
+```js
+import { invert } from '@ahmedsemih/color-fns';
+
+invert('rgb(255, 0, 0)');
+// 'rgb(0, 255, 255)'
+invert('hsl(0, 100%, 50%)');
+// 'hsl(180, 100%, 50%)'
+invert('#ff0000');
+// '#00FFFF'
+invert({ red: 255, green: 0, blue: 0 });
+// { red: 0, green: 255, blue: 255 }
+invert({ hue: 0, saturation: 100, lightness: 50 });
+// { hue: 180, saturation: 100, lightness: 50 }
+```
+
+#### <a id="setAlpha"></a>`setAlpha(color: Color, alpha: number): Color`
+
+Sets the alpha (opacity) of a color. Returns a new color in the same format as the input.
+
+```js
+import { setAlpha } from '@ahmedsemih/color-fns';
+
+setAlpha('rgb(255, 0, 0)', 0.5);
+// 'rgba(255, 0, 0, 0.5)'
+setAlpha('hsl(0, 100%, 50%)', 0.75);
+// 'hsla(0, 100%, 50%, 0.75)'
+setAlpha('#ff0000', 0.3);
+// '#ff00004c'
+setAlpha({ red: 255, green: 0, blue: 0 }, 0.8);
+// { red: 255, green: 0, blue: 0, alpha: 0.8 }
+setAlpha({ hue: 0, saturation: 100, lightness: 50 }, 0.6);
+// { hue: 0, saturation: 100, lightness: 50, alpha: 0.6 }
 ```
 
 ### 🔍 Parse
