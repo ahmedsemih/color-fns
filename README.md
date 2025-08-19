@@ -3,7 +3,6 @@
 # color-fns
 
 ![Npm Version](https://img.shields.io/npm/v/@ahmedsemih/color-fns.svg)
-![Bundle Size](https://img.shields.io/bundlephobia/min/@ahmedsemih/color-fns)
 ![Types Included](https://img.shields.io/npm/types/@ahmedsemih/color-fns)
 ![Downloads](https://img.shields.io/npm/dt/@ahmedsemih/color-fns)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
